@@ -10,6 +10,8 @@ markdown = "*"
 django-filter = "*"
 pillow = "*"
 pyyaml = "*"
+django-split-settings = "*"
+pathlib = "*"
 
 [dev-packages]
 pylint = "*"
