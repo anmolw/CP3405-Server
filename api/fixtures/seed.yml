@@ -1,0 +1,91 @@
+- model: api.announcement
+  pk: 1
+  fields: {title: Canteen Closure, description: The canteen will be closed on Thursday 17th August., created_at: !!timestamp '2018-08-14
+      08:28:28.276605+00:00'}
+- model: api.restaurant
+  pk: 1
+  fields: {name: Indian Food, thumbnail: default.png}
+- model: api.restaurant
+  pk: 2
+  fields: {name: Western Food, thumbnail: default.png}
+- model: api.restaurant
+  pk: 3
+  fields: {name: Vietnamese Food, thumbnail: default.png}
+- model: api.restaurant
+  pk: 4
+  fields: {name: Japanese Food, thumbnail: default.png}
+- model: api.menuitem
+  pk: 1
+  fields: {restaurant: 1, name: Samosa, price: 2.5}
+- model: api.menuitem
+  pk: 2
+  fields: {restaurant: 1, name: Chicken Biryani, price: 3.5}
+- model: api.menuitem
+  pk: 3
+  fields: {restaurant: 1, name: Pani Puri, price: 3.4}
+- model: api.menuitem
+  pk: 4
+  fields: {restaurant: 1, name: Vada Pav, price: 2.5}
+- model: api.menuitem
+  pk: 5
+  fields: {restaurant: 1, name: Plain Dosa, price: 1.2}
+- model: api.menuitem
+  pk: 6
+  fields: {restaurant: 1, name: Masala Dosa, price: 2.5}
+- model: api.menuitem
+  pk: 7
+  fields: {restaurant: 1, name: Vegetable Biryani, price: 3.5}
+- model: api.menuitem
+  pk: 8
+  fields: {restaurant: 1, name: Veg Set Meal, price: 8.0}
+- model: api.menuitem
+  pk: 9
+  fields: {restaurant: 1, name: Non Veg Set Meal, price: 9.0}
+- model: api.menuitem
+  pk: 10
+  fields: {restaurant: 2, name: Fries, price: 2.5}
+- model: api.menuitem
+  pk: 11
+  fields: {restaurant: 2, name: Chicken Pizza, price: 9.0}
+- model: api.menuitem
+  pk: 12
+  fields: {restaurant: 2, name: Vegetable Pizza, price: 8.0}
+- model: api.menuitem
+  pk: 13
+  fields: {restaurant: 2, name: Penne Pasta, price: 7.0}
+- model: api.menuitem
+  pk: 14
+  fields: {restaurant: 2, name: Burger, price: 6.0}
+- model: api.menuitem
+  pk: 15
+  fields: {restaurant: 3, name: Pho, price: 5.0}
+- model: api.menuitem
+  pk: 16
+  fields: {restaurant: 3, name: Cha Ca, price: 6.0}
+- model: api.menuitem
+  pk: 17
+  fields: {restaurant: 3, name: Banh Xeo, price: 5.0}
+- model: api.menuitem
+  pk: 18
+  fields: {restaurant: 3, name: Cao Lau, price: 4.0}
+- model: api.menuitem
+  pk: 19
+  fields: {restaurant: 3, name: Goi Cuon, price: 9.0}
+- model: api.menuitem
+  pk: 20
+  fields: {restaurant: 3, name: Banh Khot, price: 7.0}
+- model: api.menuitem
+  pk: 21
+  fields: {restaurant: 4, name: Sushi/Sashimi, price: 8.0}
+- model: api.menuitem
+  pk: 22
+  fields: {restaurant: 4, name: Ramen, price: 8.0}
+- model: api.menuitem
+  pk: 23
+  fields: {restaurant: 4, name: Tempura, price: 7.0}
+- model: api.menuitem
+  pk: 24
+  fields: {restaurant: 4, name: Kare Raisu, price: 6.5}
+- model: api.menuitem
+  pk: 25
+  fields: {restaurant: 4, name: Miso Soup, price: 4.0}
