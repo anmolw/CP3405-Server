@@ -106,3 +106,4 @@ venv.bak/
 .vscode/*
 
 secret_key.txt
+db.txt
