@@ -10,7 +10,7 @@ To change settings file:
 from split_settings.tools import optional, include
 from os import environ
 
-ENV = environ.get('DJANGO_ENV') or 'development'
+ENV = environ.get('DJANGO_ENV') or 'production'
 
 base_settings = [
     'components/common.py',  # standard django settings
