@@ -1,6 +1,11 @@
 from django.db import models
 
 
+def restaurant_image_path(instance, filename):
+    extension = filename.split(".")[-1]
+    return f"res_{instance.id}.{extension}"
+
+
 # Create your models here.
 class Announcement(models.Model):
     title = models.CharField('Announcement title', max_length=200)
@@ -10,6 +15,7 @@ class Announcement(models.Model):
 
 class Restaurant(models.Model):
     name = models.CharField('Restaurant name', max_length=200)
+    thumbnail = models.ImageField('Restaurant thumbnail', upload_to=restaurant_image_path, default="default.png")
 
     def __str__(self):
         return self.name

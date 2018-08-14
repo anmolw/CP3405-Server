@@ -1,15 +1,33 @@
 # API Reference
 
+## Announcements
+
+`GET /api/announcements`
+
+Response:
+
+```json
+[
+    {
+        "title": "Canteen closure",
+        "description": "The canteen will be closed on 30/8/18.",
+        "created_at": "2018-08-14T08:28:28.276605Z"
+    }
+]
+```
+
 ## Restaurant listing
 
 `GET /api/restaurants`
 
 Response:
+
 ```json
 [
     {
         "id": 1,
         "name": "Japanese Food",
+        "thumbnail": "http://example.com/media/default.png",
         "items": [
             {
                 "id": 10,
@@ -37,6 +55,7 @@ Response:
 `CREATE /api/orders`
 
 Request:
+
 ```json
 {
     "restaurant": 1,

@@ -1,5 +1,11 @@
 from rest_framework import serializers
-from api.models import Restaurant, MenuItem, Order, OrderedItem
+from api.models import Restaurant, MenuItem, Order, OrderedItem, Announcement
+
+
+class AnnouncementSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Announcement
+        fields = ('title', 'description', 'created_at')
 
 
 class MenuItemSerializer(serializers.ModelSerializer):
@@ -13,7 +19,7 @@ class RestaurantSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Restaurant
-        fields = ('id', 'name', 'items')
+        fields = ('id', 'name', 'thumbnail', 'items')
 
 
 class OrderedItemSerializer(serializers.ModelSerializer):
