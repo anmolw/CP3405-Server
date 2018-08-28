@@ -71,3 +71,115 @@ Request:
     ]
 }
 ```
+
+## Listing reservations
+
+`GET /api/seating`
+
+Response:
+
+```json
+[
+    {
+        "id": 1,
+        "seats_available": 4,
+        "AC": false
+    },
+    {
+        "id": 2,
+        "seats_available": 3,
+        "AC": false
+    },
+    {
+        "id": 3,
+        "seats_available": 4,
+        "AC": false
+    },
+    {
+        "id": 4,
+        "seats_available": 0,
+        "AC": false
+    },
+    {
+        "id": 5,
+        "seats_available": 4,
+        "AC": false
+    },
+    {
+        "id": 6,
+        "seats_available": 3,
+        "AC": false
+    },
+    {
+        "id": 7,
+        "seats_available": 4,
+        "AC": false
+    },
+    {
+        "id": 8,
+        "seats_available": 0,
+        "AC": false
+    },
+    {
+        "id": 9,
+        "seats_available": 4,
+        "AC": true
+    },
+    {
+        "id": 10,
+        "seats_available": 3,
+        "AC": true
+    },
+    {
+        "id": 11,
+        "seats_available": 4,
+        "AC": true
+    },
+    {
+        "id": 12,
+        "seats_available": 0,
+        "AC": true
+    },
+    {
+        "id": 13,
+        "seats_available": 4,
+        "AC": true
+    },
+    {
+        "id": 14,
+        "seats_available": 3,
+        "AC": true
+    },
+    {
+        "id": 15,
+        "seats_available": 4,
+        "AC": true
+    },
+    {
+        "id": 16,
+        "seats_available": 0,
+        "AC": true
+    }
+]
+```
+
+## Creating a reservation
+
+`CREATE /api/reservations`
+
+Request:
+
+```json
+{
+    "table": 1
+}
+```
+
+<!-- Response:
+
+```json
+{
+    "id": 1,
+    "placed_at": 
+}
+``` -->

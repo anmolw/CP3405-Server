@@ -1,0 +1,48 @@
+- model: api.table
+  pk: 1
+  fields: {AC: false}
+- model: api.table
+  pk: 2
+  fields: {AC: false}
+- model: api.table
+  pk: 3
+  fields: {AC: false}
+- model: api.table
+  pk: 4
+  fields: {AC: false}
+- model: api.table
+  pk: 5
+  fields: {AC: false}
+- model: api.table
+  pk: 6
+  fields: {AC: false}
+- model: api.table
+  pk: 7
+  fields: {AC: false}
+- model: api.table
+  pk: 8
+  fields: {AC: false}
+- model: api.table
+  pk: 9
+  fields: {AC: true}
+- model: api.table
+  pk: 10
+  fields: {AC: true}
+- model: api.table
+  pk: 11
+  fields: {AC: true}
+- model: api.table
+  pk: 12
+  fields: {AC: true}
+- model: api.table
+  pk: 13
+  fields: {AC: true}
+- model: api.table
+  pk: 14
+  fields: {AC: true}
+- model: api.table
+  pk: 15
+  fields: {AC: true}
+- model: api.table
+  pk: 16
+  fields: {AC: true}

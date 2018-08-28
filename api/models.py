@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import ValidationError
 
 
 def restaurant_image_path(instance, filename):
@@ -11,6 +12,9 @@ class Announcement(models.Model):
     title = models.CharField('Announcement title', max_length=200)
     description = models.TextField('Announcement description', max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
 
 
 class Restaurant(models.Model):
@@ -40,3 +44,24 @@ class OrderedItem(models.Model):
     order = models.ForeignKey(Order, related_name="items", on_delete=models.CASCADE)
     item = models.ForeignKey(MenuItem, on_delete=models.CASCADE)
     quantity = models.IntegerField('Quantity')
+
+
+class Table(models.Model):
+    ac = models.BooleanField(name="AC")
+
+    def __str__(self):
+        return f"Table #{self.id}: {'AC' if self.AC else 'Non-AC'}"
+
+    def add_reservation(self, reservation):
+        if self.reservation_set.count() < 4:
+            self.reservation_set.add(reservation)
+        else:
+            raise ValidationError('Max 4 reservations allowed')
+
+
+class Reservation(models.Model):
+    table = models.ForeignKey(Table, on_delete=models.CASCADE)
+    date_placed = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Reservation #{self.id}"
