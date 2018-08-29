@@ -52,7 +52,7 @@ class TableSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Table
-        fields = ('id', 'seats_available')
+        fields = ('id', 'seats_available', 'AC')
 
 
 class ReservationSerializer(serializers.ModelSerializer):
