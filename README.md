@@ -1,5 +1,40 @@
 # API Reference
 
+## Authentication
+
+### Obtaining an Auth Token
+
+Before any write operations can be performed or user order history can be accessed, clients must obtain an auth token.
+
+`POST /api/login`
+
+Request:
+
+```json
+{
+    "username": "example",
+    "password": "abcd123"
+}
+```
+
+Response:
+
+```json
+{
+    "token": "9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b"
+}
+
+```
+
+### Authentication errors
+
+There are two kinds of error responses related to authentication that can be returned.
+
+- `HTTP 401 Unauthorized`
+- `HTTP 403 Permission Denied`
+
+The former is returned when there is an authentication failure, i.e. credentials are invalid. The latter is returned when authentication succeeds, but the user is denied permission.
+
 ## Announcements
 
 `GET /api/announcements`

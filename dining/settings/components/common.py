@@ -5,7 +5,7 @@ from dining.settings.components import BASE_DIR
 
 INSTALLED_APPS = [
     'django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions',
-    'django.contrib.messages', 'django.contrib.staticfiles', 'rest_framework', 'api'
+    'django.contrib.messages', 'django.contrib.staticfiles', 'rest_framework', 'api', 'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -78,3 +78,7 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.TokenAuthentication', ),
+}
