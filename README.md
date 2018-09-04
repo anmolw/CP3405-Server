@@ -45,11 +45,19 @@ Response:
 
 ```json
 {
+    "username": "example",
     "first_name": "Example",
     "last_name": "User",
     "orders": [
         {
-
+            "date_placed": "2018-09-04T11:59:26.060869Z",
+            "restaurant": "Japanese Food",
+            "total": 9.5
+        },
+        {
+            "date_placed": "2018-09-04T11:59:26.060869Z",
+            "restaurant": "Indian Food",
+            "total": 4.4
         }
     ]
 }
