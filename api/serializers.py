@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.contrib.auth.models import User
 from api.models import Restaurant, MenuItem, Order, OrderedItem, Announcement, Table, Reservation
 from django.core.validators import ValidationError
 
@@ -68,3 +69,26 @@ class ReservationSerializer(serializers.ModelSerializer):
         else:
             raise ValidationError("Max 4 reservations allowed")
         return reservation
+
+
+class OrderSummarySerializer(serializers.ModelSerializer):
+    restaurant = serializers.StringRelatedField()
+    total = serializers.SerializerMethodField()
+
+    def get_total(self, obj):
+        total = 0
+        for ordered_item in obj.items.all():
+            total += ordered_item.item.price * ordered_item.quantity
+        return total
+
+    class Meta:
+        model = Order
+        fields = ('date_placed', 'restaurant', 'total')
+
+
+class UserSerializer(serializers.ModelSerializer):
+    orders = OrderSummarySerializer(many=True)
+
+    class Meta:
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'orders')  #, 'reservations')

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.conf import settings
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -41,6 +42,7 @@ class MenuItem(models.Model):
 class Order(models.Model):
     date_placed = models.DateTimeField(auto_now_add=True)
     restaurant = models.ForeignKey(Restaurant, related_name="orders", on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name="orders", on_delete=models.CASCADE)
     # items = models.ManyToManyField(MenuItem, through="OrderedItem")
 
 
@@ -66,6 +68,7 @@ class Table(models.Model):
 class Reservation(models.Model):
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
     date_placed = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, related_name="reservations", on_delete=models.CASCADE)
 
     def __str__(self):
         return f"Reservation #{self.id}"

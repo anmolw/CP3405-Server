@@ -35,6 +35,26 @@ There are two kinds of error responses related to authentication that can be ret
 
 The former is returned when there is an authentication failure, i.e. credentials are invalid. The latter is returned when authentication succeeds, but the user is denied permission.
 
+## Fetching user account info
+
+`GET /api/account`
+
+_Requires auth token_
+
+Response:
+
+```json
+{
+    "first_name": "Example",
+    "last_name": "User",
+    "orders": [
+        {
+
+        }
+    ]
+}
+```
+
 ## Announcements
 
 `GET /api/announcements`
@@ -88,6 +108,9 @@ Response:
 ## Placing an order
 
 `CREATE /api/orders`
+
+_Requires auth token_
+
 
 Request:
 
@@ -201,6 +224,9 @@ Response:
 ## Creating a reservation
 
 `CREATE /api/reservations`
+
+_Requires auth token_
+
 
 Request:
 

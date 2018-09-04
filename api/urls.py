@@ -1,5 +1,5 @@
 from django.urls import path
-from api.views import RestaurantListView, OrderListCreateView, AnnouncementListView, TableListView, ReservationCreateView
+from api.views import RestaurantListView, OrderListCreateView, AnnouncementListView, TableListView, ReservationCreateView, AccountInfoView
 from rest_framework.authtoken import views
 
 urlpatterns = [
@@ -8,5 +8,6 @@ urlpatterns = [
     path('orders', OrderListCreateView.as_view(), name="orders"),
     path('tables', TableListView.as_view(), name="tables"),
     path('reservations', ReservationCreateView.as_view(), name="reservations"),
-    path('login', views.obtain_auth_token)
+    path('login', views.obtain_auth_token),
+    path('account', AccountInfoView.as_view(), name="account")
 ]
